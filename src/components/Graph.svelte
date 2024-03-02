@@ -55,7 +55,7 @@
             .attr("cy", (d, i) => yScale(filteredGdpValues[i]))
             .attr("r", 5) // radius of the circles
             .append("title")
-            .text((d, i) => `Country: ${d}\nGDP: ${(filteredGdpValues[i] / 1e12).toFixed(3)}T\nGini: ${filteredGiniValues[i]}`)
+            .text((d, i) => `Country: ${d}\nGDP: ${(filteredGdpValues[i] / 1e9).toFixed(3)}B\nGini: ${filteredGiniValues[i]}`)
             .style("fill", "blue"); // Change tooltip color here
 
         // Add x-axis
@@ -75,8 +75,8 @@
 
         svg.append("text")
             .attr("text-anchor", "middle")
-            .attr("transform", `translate(${-margin.left + 40},${height / 2})rotate(-90)`)
-            .text("GDP (current US$ in trillions)");
+            .attr("transform", `translate(${-margin.left + 50},${height / 2})rotate(-90)`)
+            .text("GDP (current US$)");
     });
 </script>
 
